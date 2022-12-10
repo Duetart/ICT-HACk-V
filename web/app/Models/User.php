@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -21,6 +22,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'account_type',
+        'information',
+        'photo',
+        'student_rating',
+        'student_employment_status',
+        'verification_status',
+        'information',
     ];
 
     /**
@@ -41,4 +49,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isStudent(): bool
+    {
+        return $this->account_type === 'student';
+    }
+
+    public function isCompany(): bool
+    {
+        return $this->account_type === 'company';
+    }
+
+    public function update(array $attributes = [], array $options = []): bool
+    {
+        if (isset($attributes['password'])) {
+            $attributes['password'] = bcrypt($attributes['password']);
+        }
+
+        return parent::update($attributes, $options);
+    }
 }

@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -20,6 +19,14 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('account_type');
+            $table->string('verification_status')->default('uncompleted');
+            $table->string('student_employment_status')->nullable();
+            $table->string('photo')->nullable();
+            $table->text('information')->nullable();
+            $table->bigInteger('telegram_id')->nullable();
+            $table->string('telegram_auth_code')->unique();
+            $table->double('student_rating')->default(0);
             $table->timestamps();
         });
     }

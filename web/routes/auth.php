@@ -18,5 +18,7 @@ Route::get('/student/login', [StudentAuthController::class, 'showLoginForm'])->n
 Route::post('/student/login', [StudentAuthController::class, 'login'])->name('student.login');
 Route::get('/student/logout', [StudentAuthController::class, 'logout'])->name('student.logout');
 
-
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})->middleware('guest')->name('password.request');
 

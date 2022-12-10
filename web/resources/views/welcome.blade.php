@@ -35,100 +35,31 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Проекты</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Биржа
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Действие</a></li>
-                                <li><a class="dropdown-Меньшая кнопкаitem" href="#">Другое действие</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Биржа</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Отключенная</a>
+                            <a class="nav-link" href="personal_account.blade.php">Аккаунт</a>
                         </li>
                     </ul>
-
-                        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Вы кто?</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Я - студент
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Я - компания
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Продолжить регистрацию</button>
-                                    </div>
-                                </div>
+                </div>
+                <div class="d-flex">
+                    @auth
+ВАся вавава уц ц
+                    @endauth
+                    @guest
+                            <a class="btn btn-dark me-2" href="/login" role="button">Вход</a>
+                            <div class="dropdown">
+                                <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Регистрация
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/register">Для студентов</a></li>
+                                    <li><a class="dropdown-item" href="/register">Для компании</a></li>
+                                </ul>
                             </div>
-                        </div>
+                    @endguest
 
-                        <!-- форма для студентов -->
-                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Заполните форму</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                            ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Вернуться к первому</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Кнопка-триггер модального окна -->
-                        <button type="button" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            вход
-                        </button>
-
-                        <!-- Модальное окно -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Вход в систему</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Пароль</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword1">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Отправить</button>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" href="#exampleModalToggle" role="button">регистрация</a>
                 </div>
             </div>
         </nav>

@@ -1,1 +1,1 @@
-<?php dd($student); ?>
+<?php dd($projects); ?>

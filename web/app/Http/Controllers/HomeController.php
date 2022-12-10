@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -37,5 +38,10 @@ class HomeController extends Controller
         $user->verification_status = 'pending';
         $user->save();
         return redirect()->route('home');
+    }
+
+    public function public_students()
+    {
+        return view('public_students', ['students' => User::where('account_type', 'student')->where('account_type', 'student')->get()]);
     }
 }

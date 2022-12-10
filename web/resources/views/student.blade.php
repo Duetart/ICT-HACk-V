@@ -108,8 +108,8 @@
                                 <div class="h3 mt-2">Расскажите о себе</div>
 
                                 <div class="col-md-6">
-                        <textarea style="width: 100%"
-                                  name="information">{{ $student->information }}</textarea>
+                        <textextarea style="width: 100%"
+                                  name="information">{{ $student->information }}</textextarea>
                                 </div>
 
                                 <div class="row left-0">
@@ -163,20 +163,23 @@
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-success" type="button">добавить проект</button>
                     </div>
+
                     <div class="row">
-                        <div class="col-4">
-                            <div class="card m-2 ml-0" style="width: 18rem;">
+                        @foreach($projects as $project)
+                        <div class="col-sm ">
+
+                            <div class="card m-2 justify-center" style="width: 18rem;">
                                 <img
                                     src="https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-05/20210614_gaf_u39_903.jpeg.jpg?itok=arZ473cD"
                                     class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">IT-кресло</h5>
-                                    <p class="card-text">Это кресло будет вашим хорошим другом. Оно легко
-                                        трансформируется в кровать!</p>
+                                    <h5 class="card-title">{{$project->name}}</h5>
+                                    <p class="card-text">{{\Illuminate\Support\Str::limit($project->description, 100, $end='...')}}</p>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#my_project1">
                                         Подробнее
                                     </button>
+
 
                                     <!-- Модальное окно для 1 -->
                                     <div class="modal fade" id="my_project1" tabindex="-1"
@@ -203,85 +206,9 @@
 
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card m-2" style="width: 18rem;">
-                                <img
-                                    src="https://img.championat.com/c/1350x759/news/big/p/y/kogda-nuzhno-otdavat-rebjonka-v-sport-rekomendacii_1574181249956324555.jpg"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Перчатки для баскетбола</h5>
-                                    <p class="card-text">Наноперчатки для баскетбола отличаются высокой цепкостью и
-                                        износостойкостью.</p>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#my_project2">
-                                        Подробнее
-                                    </button>
 
-                                    <!-- Модальное окно для 2 -->
-                                    <div class="modal fade" id="my_project2" tabindex="-1"
-                                         aria-labelledby="my_projectLabel2" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="my_projectLabel2">Заголовок модального
-                                                        окна</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Закрыть"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    !!!
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="col-4">
-                            <div class="card m-2" style="width: 18rem;">
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7QyjW7OJL1cV_wqRFtGGK_Np2juCshL1xlg&usqp=CAU"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Передовой трактор</h5>
-                                    <p class="card-text">Благодаря команде из АУ, была разработана более крепкая
-                                        конструкция тракторов.</p>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#my_project3">
-                                        Подробнее
-                                    </button>
-
-                                    <!-- Модальное окно для 3 -->
-                                    <div class="modal fade" id="my_project3" tabindex="-1"
-                                         aria-labelledby="my_projectLabel3" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="my_projectLabel3">Заголовок модального
-                                                        окна</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Закрыть"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                 </div>

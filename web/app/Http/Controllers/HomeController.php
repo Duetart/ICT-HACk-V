@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->account_type == 'student') {
-            return view('student', ['student' => Auth::user()]);
+            return view('student', ['student' => Auth::user(), 'projects' => Auth::user()->projects()]);
         } else {
             return view('company');
         }

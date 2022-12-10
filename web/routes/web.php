@@ -26,3 +26,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/update', [HomeController::class, 'update'])->name('update');
 
 Route::get('/my-projects', [ProjectController::class, 'studentProjects'])->middleware('auth');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

@@ -160,15 +160,18 @@
                 <div class="tab-pane fade" id="v-pills-my-project" role="tabpanel"
                      aria-labelledby="v-pills-disabled-tab"
                      tabindex="0">
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-success" type="button">добавить проект</button>
+                    <div class="row ">
+                        <div class="col-12 m-2">
+                            <button class="btn btn-success" type="button">добавить проект</button>
+                        </div>
                     </div>
+
 
                     <div class="row">
                         @foreach($projects as $project)
                         <div class="col-sm ">
 
-                            <div class="card m-2 justify-center" style="width: 18rem;">
+                            <div class="card m-2 p-0 align-center" style="width: 18rem;">
                                 <img
                                     src="https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-05/20210614_gaf_u39_903.jpeg.jpg?itok=arZ473cD"
                                     class="card-img-top" alt="...">

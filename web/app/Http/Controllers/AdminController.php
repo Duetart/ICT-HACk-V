@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class CompanyController extends Controller
+class AdminController extends Controller
 {
     /**
      * redirect admin after login
@@ -14,6 +14,6 @@ class CompanyController extends Controller
      */
     public function dashboard()
     {
-        return view('companyDashboard');
+        return view('adminDashboard');
     }
 }

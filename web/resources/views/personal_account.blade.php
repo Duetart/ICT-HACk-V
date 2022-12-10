@@ -79,7 +79,7 @@
                     data-bs-target="#v-pills-my-project" type="button" role="tab" aria-controls="v-pills-my-project"
                     aria-selected="false">Мои проекты
             </button>
-            <button class="nav-link" id="v-pills-messages-tab" style="width: 210px;"  data-bs-toggle="pill" data-bs-target="#v-pills-messages"
+            <button class="nav-link"  id="v-pills-messages-tab" style="width: 210px;"  data-bs-toggle="pill" data-bs-target="#v-pills-messages"
                     type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Избранные проекты
             </button>
         </div>

@@ -45,7 +45,7 @@
                 </div>
                 <div class="d-flex">
                     @auth
-ВАся вавава уц ц
+                        Катенок Ра Анреевич
                     @endauth
                     @guest
                             <a class="btn btn-dark me-2" href="/login" role="button">Вход</a>

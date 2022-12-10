@@ -29,6 +29,8 @@ class User extends Authenticatable
         'student_employment_status',
         'verification_status',
         'information',
+        'telegram_id',
+        'telegram_auth_code',
     ];
 
     /**
@@ -67,5 +69,10 @@ class User extends Authenticatable
         }
 
         return parent::update($attributes, $options);
+    }
+
+    public function no_telegram(): bool
+    {
+        return $this->telegram_id === null;
     }
 }

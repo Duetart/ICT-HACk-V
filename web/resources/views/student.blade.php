@@ -22,6 +22,18 @@
                                 Ваш аккаунт находится на проверке. Пожалуйста, подождите.
                             </div>
                         @endif
+                        @if ($student->verification_status == 'rejected')
+                            <div class="alert alert-danger" role="alert">
+                                Ваш аккаунт отклонен. Пожалуйста, заполните все поля ниже и отправьте заявку на
+                                проверку.
+                            </div>
+                        @endif
+                        @if($student->no_telegram())
+                            <div class="alert alert-danger" role="alert">
+                                Ваш аккаунт не привязан к Telegram. Пожалуйста, привяжите аккаунт к Telegram. Код для
+                                подтверждения: {{ $student->telegram_auth_code }}
+                            </div>
+                        @endif
                         <form method="POST" action="{{ route('update') }}">
                             @csrf
 

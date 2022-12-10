@@ -18,12 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::get('/projects', [ProjectController::class, 'public_projects'])->name('projects');
+Route::get('/students', [HomeController::class, 'public_students'])->name('students');
+Route::get('/burse', [ProjectController::class, 'index'])->name('burse');
 
 
 Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::post('/update', [HomeController::class, 'update'])->name('update');
+Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
+Route::post('/update', [HomeController::class, 'update'])->middleware('auth')->name('update');
 
 Route::get('/my-projects', [ProjectController::class, 'studentProjects'])->middleware('auth');
 

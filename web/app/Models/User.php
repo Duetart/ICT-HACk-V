@@ -4,8 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -83,5 +83,14 @@ class User extends \TCG\Voyager\Models\User
     public function projects()
     {
         return DB::table('projects')->get();
+    }
+
+    public function get_tags()
+    {
+        $prepare = DB::table('user_tags')->where('user_id', Auth::user()->id)->get();
+        $ans = [];
+        foreach ($prepare as $tag)
+            $ans[] = DB::table('all_tags')->where('id', $tag->tag_id)->get();
+        return $ans;
     }
 }

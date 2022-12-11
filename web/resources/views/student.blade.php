@@ -21,7 +21,6 @@
                 проекты
             </button>
         </div>
-
         <div class="tab-content m-3 mt-0" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                  aria-labelledby="v-pills-home-tab"
@@ -100,14 +99,12 @@
             <div class="row mt-4">
                 <div class="h4">Выберете теги</div>
                 <div class="col-12">
-
-
-                            <span class="badge rounded-pill text-bg-warning align-middle">Python<button type="button"
-                                                                                                         class="btn-close"
-                                                                                                         aria-label="Закрыть"></button>  </span>
-
-                            <span class="badge rounded-outline text-bg-warning align-middle">Stressful<button
-                                    type="button" class="btn-close" aria-label="Закрыть"></button>  </span>
+                    @foreach($student->get_tags() as $tag)
+                        <span class="badge rounded-pill text-bg-warning align-middle">{{ $tag[0]->name }}<button
+                                type="button"
+                                class="btn-close"
+                                aria-label="Закрыть"></button>  </span>
+                    @endforeach
                 </div>
                 <form class="mt-2 col-md-4" action="{{ route('add_tag') }}" method="POST">
                     @csrf

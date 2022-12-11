@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <style type="text/css">
         @font-face {
-            font-family: "ALS Gorizont Variable","Golos Textt","Golos-UI_VF","Golos-Text_Black";
+            font-family: "ALS Gorizont Variable", "Golos Textt", "Golos-UI_VF", "Golos-Text_Black";
             src: url('{{ public_path('fonts/ALS Gorizont/ALS Gorizont Variable.ttf') }}');
             src: url('{{ public_path('fonts/Golos Textt-2/PT/PT/Golos-UI/Golos-UI_VF.ttf') }}');
         }
@@ -38,16 +38,20 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ route('welcome') }}">Главная</a>
+                        <a class="nav-link {{ (Request::route()->getName() == 'welcome') ? 'active' : '' }}"
+                           aria-current="page" href="{{ route('welcome') }}">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ route('students') }}">Студенты</a>
+                        <a class="nav-link {{ (Request::route()->getName() == 'students') ? 'active' : '' }}"
+                           aria-current="page" href="{{ route('students') }}">Студенты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('projects') }}">Проекты</a>
+                        <a class="nav-link {{ (Request::route()->getName() == 'projects') ? 'active' : '' }}"
+                           href="{{ route('projects') }}">Проекты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('burse') }}">Биржа</a>
+                        <a class="nav-link {{ (Request::route()->getName() == 'burse') ? 'active' : '' }}"
+                           href="{{ route('burse') }}">Биржа</a>
                     </li>
                 </ul>
 
@@ -68,14 +72,18 @@
                         @endif
                     @else
                         <li class="nav-item dropdown ">
-                            <a id="navbarDropdown bg-secondary h5" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a id="navbarDropdown bg-secondary h5" class="nav-link dropdown-toggle" href="#"
+                               role="button"
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-end bg-secondary link-dark" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item bg-secondary text-dark link-light h6" href="{{ route('home') }}"> Профиль </a>
-                                <a class="dropdown-item bg-secondary text-dark link-light h6 pb-0" href="{{ route('logout') }}"
+                            <div class="dropdown-menu dropdown-menu-end bg-secondary link-dark"
+                                 aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item bg-secondary text-dark link-light h6"
+                                   href="{{ route('home') }}"> Профиль </a>
+                                <a class="dropdown-item bg-secondary text-dark link-light h6 pb-0"
+                                   href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     Выйти
@@ -100,7 +108,9 @@
     <floor>
     </floor>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

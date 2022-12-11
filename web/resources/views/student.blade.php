@@ -81,21 +81,20 @@
                                     <div class="h5">Статус: {{$student->student_employment_status}}</div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <button class="btn btn-success m-1" type="button" disabled>2 проекта</button>
-                                </div>
-                            </div>
-
-
-                            <div class="col-9">
-                                <button class="btn btn-outline-danger m-1" type="button" disabled>front-end</button>
-                                <button class="btn btn-outline-primary m-1" type="button" disabled>back-end</button>
-                                <button class="btn btn-outline-warning m-1" type="button" disabled>react</button>
-                            </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="h4">Выберете теги</div>
+                        <div class="col-12">
 
+                        </div>
+                        <div class="col-sm">
+                            <span class="badge rounded-pill text-bg-warning align-middle">Warning<button type="button" class="btn-close" aria-label="Закрыть"></button>  </span>
+                        </div>
+                        <div class="col-sm">
+                            <span class="badge rounded-outline text-bg-warning align-middle">Warning<button type="button" class="btn-close" aria-label="Закрыть"></button>  </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
                      tabindex="0">

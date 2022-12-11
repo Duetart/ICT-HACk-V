@@ -68,7 +68,7 @@
                         <div class="col-9">
                             <div class="row mb-2">
                                 <div class="col">
-                                    <div class="h4">{{ $student->name }}</div>
+                                    <div class="h4">{{ $student->name }}. Рейтинг:{{$student->student_rating}}/5</div>
                                 </div>
                             </div>
                             <div class="row mb-2">

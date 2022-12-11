@@ -61,9 +61,8 @@
 
                         <div class="col-3 p-o ml-3">
                             <figure class="figure">
-                                <img src="https://pbs.twimg.com/media/FVokXFJWYAMOsGe.png"
+                                <img src="{{ asset("images/cat.jpg") }}"
                                      class="img-thumbnail p-0 border-0 float-start">
-                                <figcaption class="figure-caption">В системе с 2022 года.</figcaption>
                             </figure>
                         </div>
                         <div class="col-9">
@@ -165,46 +164,47 @@
 
                     <div class="row">
                         @foreach($projects as $project)
-                        <div class="col-sm ">
+                            <div class="col-sm ">
 
-                            <div class="card m-2 p-0 align-center" style="width: 18rem;">
-                                <img
-                                    src="https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-05/20210614_gaf_u39_903.jpeg.jpg?itok=arZ473cD"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$project->name}}</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">{{\App\Models\User::find($project->company_id)->name}}</h6>
-                                    <p class="card-text">{{\Illuminate\Support\Str::limit($project->description, 100, $end='...')}}</p>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#my_project1">
-                                        Подробнее
-                                    </button>
-                                    <div class="modal fade" id="my_project1" tabindex="-1"
-                                         aria-labelledby="my_projectLabel1" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="my_projectLabel1">{{$project->name}}</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Закрыть"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    {{$project->description}}\
+                                <div class="card m-2 p-0 align-center" style="width: 18rem;">
+                                    <img
+                                        src="https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-05/20210614_gaf_u39_903.jpeg.jpg?itok=arZ473cD"
+                                        class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$project->name}}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{\App\Models\User::find($project->company_id)->name}}</h6>
+                                        <p class="card-text">{{\Illuminate\Support\Str::limit($project->description, 100, $end='...')}}</p>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#my_project1">
+                                            Подробнее
+                                        </button>
+                                        <div class="modal fade" id="my_project1" tabindex="-1"
+                                             aria-labelledby="my_projectLabel1" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title"
+                                                            id="my_projectLabel1">{{$project->name}}</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Закрыть"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        {{$project->description}}\
 
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть
-                                                    </button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Закрыть
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
-
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
                         @endforeach
                     </div>
 

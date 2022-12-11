@@ -34,6 +34,6 @@ class HomeController extends Controller
 
     public function public_students()
     {
-        return view('public_students', ['students' => User::where('account_type', 'student')->where('account_type', 'student')->get()]);
+        return view('public_students', ['students' => User::where('account_type', 'student')->where('verification_status', 'ok')->get()]);
     }
 }

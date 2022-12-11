@@ -61,13 +61,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link h5" href="{{ route('login') }}">{{ __('Войти') }}</a>
+                                <a class="nav-link h5 {{ (Request::route()->getName() == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Войти') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item ">
-                                <a class="nav-link h5" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
+                                <a class="nav-link h5 {{ (Request::route()->getName() == 'register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
                             </li>
                         @endif
                     @else

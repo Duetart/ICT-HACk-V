@@ -68,9 +68,13 @@
                         <div class="col-9">
                             <div class="row mb-2">
                                 <div class="col">
-                                    <div class="h4">{{ $student->name }}</div>
+                                    <div class="h4">{{ $student->name }}. Рейтинг: {{$student->student_rating}}/5</div>
                                 </div>
                             </div>
+                            <div class="col">
+                                <div class="h8">Статус: {{ $student->student_employment_status}}</div>
+                            </div>
+                        </div>
                             <div class="row mb-2">
                                 <div class="h5">Образование</div>
                                 <pre>{{ $student->education }}</pre>
@@ -192,11 +196,7 @@
                 <div class="tab-pane fade" id="v-pills-my-project" role="tabpanel"
                      aria-labelledby="v-pills-disabled-tab"
                      tabindex="0">
-                    <div class="row ">
-                        <div class="col-12 m-2">
-                            <button class="btn btn-success" type="button">Добавить проект</button>
-                        </div>
-                    </div>
+
 
 
                     <div class="row">
@@ -251,7 +251,7 @@
 
                 </div>
             </div>
-        </div>
+
     </main>
     <floor>
     </floor>

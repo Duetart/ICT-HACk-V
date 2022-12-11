@@ -108,16 +108,12 @@
                                 <div class="h3 mt-2">Расскажите о себе</div>
 
                                 <div class="col-md-6">
-                        <textextarea style="width: 100%"
-                                  name="information">{{ $student->information }}</textextarea>
+                        <textarea style="width: 100%"
+                                  name="information">{{ $student->information }}</textarea>
                                 </div>
 
-                                <div class="row left-0">
-                                    <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Сохранить
-                                        </button>
-                                    </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Сохранить данные</button>
                                 </div>
                             </form>
                         </div>

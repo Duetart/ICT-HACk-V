@@ -61,7 +61,7 @@
 
                         <div class="col-3 p-o ml-3">
                             <figure class="figure">
-                                <img src="{{ asset("images/cat.jpg") }}"
+                                <img src="{{ asset($student->avatar) }}"
                                      class="img-thumbnail p-0 border-0 float-start">
                             </figure>
                         </div>

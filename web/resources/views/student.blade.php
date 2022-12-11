@@ -189,11 +189,7 @@
                 <div class="tab-pane fade" id="v-pills-my-project" role="tabpanel"
                      aria-labelledby="v-pills-disabled-tab"
                      tabindex="0">
-                    <div class="row ">
-                        <div class="col-12 m-2">
-                            <button class="btn btn-success" type="button">Добавить проект</button>
-                        </div>
-                    </div>
+
 
 
                     <div class="row">

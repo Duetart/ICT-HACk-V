@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BurseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,14 @@ Route::get('/', function () {
 
 Route::get('/projects', [ProjectController::class, 'public_projects'])->name('projects');
 Route::get('/students', [HomeController::class, 'public_students'])->name('students');
-Route::get('/burse', [ProjectController::class, 'index'])->name('burse');
+
+Route::get('/burse', [BurseController::class, 'index'])->name('burse');
+Route::get('/burse/my', [BurseController::class, 'my'])->name('burse.my');
+Route::get('/burse/edit/{id}', [BurseController::class, 'edit_form'])->name('burse.edit_form');
+Route::get('/burse/registration', function () {
+    return view('burse.add_lot');
+})->middleware('auth')->name('burse.registration_form');
+Route::post('/burse/registration', [BurseController::class, 'add'])->middleware('auth')->name('burse.registration');
 
 
 Auth::routes();

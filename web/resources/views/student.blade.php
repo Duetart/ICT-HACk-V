@@ -117,24 +117,27 @@
                             <form method="POST" action="{{ route('update') }}">
                                 @csrf
                                 <div class="h3 mt-2">Расскажите о себе</div>
-                                <div class="row">
+                                <div class="row mb-3">
                                     <div class="h4">Образование</div>
                                     <div class="col-md-6">
-                                    <textarea style="width: 100%; height: 100px"
-                                              name="education">{{ $student->education }}</textarea>
+                                    <textarea
+                                        name="education" class="form-control"
+                                        rows="5">{{ $student->education }}</textarea>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row mb-3">
                                     <div class="h4">Hard & soft skills</div>
                                     <div class="col-md-6">
-                                    <textarea style="width: 100%; height: 100px"
+                                    <textarea class="form-control"
+                                              rows="5"
                                               name="skills">{{ $student->skills }}</textarea>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row mb-3">
                                     <div class="h4">Участие в проектах</div>
                                     <div class="col-md-6">
-                                    <textarea style="width: 100%; height: 100px"
+                                    <textarea class="form-control"
+                                              rows="5"
                                               name="projects_participation">{{ $student->projects_participation }}</textarea>
                                     </div>
                                 </div>
@@ -142,7 +145,7 @@
                                 <div class="row">
                                     <div class="h4">Резюме</div>
                                     <div class="col-md-6">
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <input type="file" class="form-control" id="exampleFormControlFile1">
                                     </div>
                                 </div>
                                 <div class="col-12 mt-2">

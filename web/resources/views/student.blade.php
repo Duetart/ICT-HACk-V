@@ -72,10 +72,20 @@
                                 </div>
                             </div>
                             <div class="row mb-2">
-                                <div class="col">
-                                    <div class="h5">{{ $student->information }}</div>
-                                </div>
+                                <div class="h5">Образование</div>
+                                <pre>{{ $student->education }}</pre>
                             </div>
+
+                            <div class="row mb-2">
+                                <div class="h5">Hard & soft skills</div>
+                                <pre>{{ $student->skills }}</pre>
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="h5">Участие в проектах</div>
+                                <pre>{{ $student->projects_participation }}</pre>
+                            </div>
+
                             <div class="row mb-2">
                                 <div class="col">
                                     <div class="h5">Статус: {{$student->student_employment_status}}</div>
@@ -89,10 +99,13 @@
 
                         </div>
                         <div class="col-sm">
-                            <span class="badge rounded-pill text-bg-warning align-middle">Warning<button type="button" class="btn-close" aria-label="Закрыть"></button>  </span>
+                            <span class="badge rounded-pill text-bg-warning align-middle">Warning<button type="button"
+                                                                                                         class="btn-close"
+                                                                                                         aria-label="Закрыть"></button>  </span>
                         </div>
                         <div class="col-sm">
-                            <span class="badge rounded-outline text-bg-warning align-middle">Warning<button type="button" class="btn-close" aria-label="Закрыть"></button>  </span>
+                            <span class="badge rounded-outline text-bg-warning align-middle">Warning<button
+                                    type="button" class="btn-close" aria-label="Закрыть"></button>  </span>
                         </div>
                     </div>
                 </div>

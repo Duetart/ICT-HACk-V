@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <main class="container">
         <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button class="nav-link active" style="width: 210px;" id="v-pills-home-tab" data-bs-toggle="pill"
@@ -66,13 +65,14 @@
                             </figure>
                         </div>
                         <div class="col-9">
-                            <div class="row mb-2">
+                            <div class="row">
                                 <div class="col">
-                                    <div class="h4">{{ $student->name }}. Рейтинг: {{$student->student_rating}}/5</div>
+                                    <div class="h4 mb-4">{{ $student->name }}</div>
+                                    <div class="h6">Рейтинг: {{$student->student_rating}}/5</div>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="h8">Статус: {{ $student->student_employment_status}}</div>
+                                <div class="h6">Статус: {{ $student->student_employment_status}}</div>
                             </div>
                         </div>
                             <div class="row mb-2">
@@ -90,14 +90,9 @@
                                 <pre>{{ $student->projects_participation }}</pre>
                             </div>
 
-                            <div class="row mb-2">
-                                <div class="col">
-                                    <div class="h5">Статус: {{$student->student_employment_status}}</div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-4">
                         <div class="h4">Выберете теги</div>
                         <div class="col-12">
 
@@ -200,49 +195,49 @@
 
 
                     <div class="row">
-                        @foreach($projects as $project)
-                            <div class="col-sm ">
+{{--                        @foreach($projects as $project)--}}
+{{--                            <div class="col-sm">--}}
 
-                                <div class="card m-2 p-0 align-center" style="width: 18rem;">
-                                    <img
-                                        src="https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-05/20210614_gaf_u39_903.jpeg.jpg?itok=arZ473cD"
-                                        class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{$project->name}}</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">{{\App\Models\User::find($project->company_id)->name}}</h6>
-                                        <p class="card-text">{{\Illuminate\Support\Str::limit($project->description, 100, $end='...')}}</p>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#my_project1">
-                                            Подробнее
-                                        </button>
-                                        <div class="modal fade" id="my_project1" tabindex="-1"
-                                             aria-labelledby="my_projectLabel1" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title"
-                                                            id="my_projectLabel1">{{$project->name}}</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Закрыть"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        {{$project->description}}\
+{{--                                <div class="card m-2 p-0" style="width: 18rem;">--}}
+{{--                                    <img--}}
+{{--                                        src="https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-05/20210614_gaf_u39_903.jpeg.jpg?itok=arZ473cD"--}}
+{{--                                        class="card-img-top" alt="...">--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <h5 class="card-title">{{$project->name}}</h5>--}}
+{{--                                        <h6 class="card-subtitle mb-2 text-muted">{{\App\Models\User::find($project->company_id)->name}}</h6>--}}
+{{--                                        <p class="card-text">{{\Illuminate\Support\Str::limit($project->description, 100, $end='...')}}</p>--}}
+{{--                                        <button type="button" class="btn btn-light" data-bs-toggle="modal"--}}
+{{--                                                data-bs-target="#my_project1">--}}
+{{--                                            Подробнее--}}
+{{--                                        </button>--}}
+{{--                                        <div class="modal fade" id="my_project1" tabindex="-1"--}}
+{{--                                             aria-labelledby="my_projectLabel1" aria-hidden="true">--}}
+{{--                                            <div class="modal-dialog modal-lg">--}}
+{{--                                                <div class="modal-content">--}}
+{{--                                                    <div class="modal-header">--}}
+{{--                                                        <h5 class="modal-title"--}}
+{{--                                                            id="my_projectLabel1">{{$project->name}}</h5>--}}
+{{--                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--}}
+{{--                                                                aria-label="Закрыть"></button>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="modal-body">--}}
+{{--                                                        {{$project->description}}\--}}
 
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Закрыть
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                                    </div>--}}
+{{--                                                    <div class="modal-footer">--}}
+{{--                                                        <button type="button" class="btn btn-secondary"--}}
+{{--                                                                data-bs-dismiss="modal">Закрыть--}}
+{{--                                                        </button>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                    </div>
-                                </div>
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                            </div>
-                        @endforeach
+{{--                            </div>--}}
+{{--                        @endforeach--}}
                     </div>
 
                 </div>
@@ -252,7 +247,6 @@
                 </div>
             </div>
 
-    </main>
     <floor>
     </floor>
 

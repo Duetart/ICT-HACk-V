@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card" style="background: #7B45EC;">
                     <div class="card-header">Регистрация</div>
 
                     <div class="card-body">
@@ -84,7 +84,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn" style="background: #52A874;">
                                         Зарегистрироваться
                                     </button>
                                 </div>

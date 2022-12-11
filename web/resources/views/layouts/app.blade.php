@@ -10,18 +10,23 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <style type="text/css">
+        @font-face {
+            font-family: "ALS Gorizont Variable","Golos Textt","Golos-UI_VF","Golos-Text_Black";
+            src: url('{{ public_path('fonts/ALS Gorizont/ALS Gorizont Variable.ttf') }}');
+            src: url('{{ public_path('fonts/Golos Textt-2/PT/PT/Golos-UI/Golos-UI_VF.ttf') }}');
+        }
+    </style>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body class="bg-black text-light" style="font-family: 'ALS Gorizont',serif;">
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-dark bg-black shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                ITC.HACk-V
+            <a class="navbar-brand h5" href="{{ url('/') }}">
+                ICT.HACk-V
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -29,7 +34,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse h5" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
@@ -52,25 +57,25 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link h5" href="{{ route('login') }}">{{ __('Войти') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <li class="nav-item ">
+                                <a class="nav-link h5" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        <li class="nav-item dropdown ">
+                            <a id="navbarDropdown bg-secondary h5" class="nav-link dropdown-toggle" href="#" role="button"
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('home') }}"> Профиль </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                            <div class="dropdown-menu dropdown-menu-end bg-secondary link-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item bg-secondary text-dark link-light h6" href="{{ route('home') }}"> Профиль </a>
+                                <a class="dropdown-item bg-secondary text-dark link-light h6 pb-0" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     Выйти
@@ -96,4 +101,5 @@
     </floor>
 </div>
 </body>
+
 </html>

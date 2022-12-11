@@ -3,7 +3,7 @@
     <div class="row">
     @foreach($projects as $project)
         <div class="col">
-            <div class="card border-0 m-2 p-0 bg-light" style="width: 15rem; color: #221183;">
+            <div class="card border-3 m-2 p-0 bg-light" style="width: 15rem; color: #221183;">
                 <img
                     src="https://cdn.iz.ru/sites/default/files/styles/1920x1080/public/article-2022-05/20210614_gaf_u39_903.jpeg.jpg?itok=arZ473cD"
                     class="card-img-top" alt="...">

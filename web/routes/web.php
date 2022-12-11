@@ -39,6 +39,8 @@ Route::post('/update', [HomeController::class, 'update'])->middleware('auth')->n
 
 Route::get('/my-projects', [ProjectController::class, 'studentProjects'])->middleware('auth');
 
+Route::get('/add_tag', [ProjectController::class, 'studentProjects'])->middleware('auth')->name("add_tag");
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

@@ -4,7 +4,7 @@
     <div class="row">
         @foreach($students as $student)
             <div class="col">
-                <div class="card m-1 p-0 border-0" style="width: 15rem; color: #221183;">
+                <div class="card m-1 p-0 border-3" style="width: 15rem; color: #221183;">
                     <img
                         src="{{ asset($student->photo) }}"
                         class="card-img-top" alt="...">

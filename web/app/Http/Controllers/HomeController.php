@@ -26,8 +26,17 @@ class HomeController extends Controller
     public function update()
     {
         $user = Auth::user();
-        $user->information = request('information');
-        $user->verification_status = 'pending';
+        if (request('information') !== null)
+            $user->information = request('information');
+        if (request('education') !== null)
+            $user->education = request('education');
+        if (request('skills') !== null)
+            $user->skills = request('skills');
+        if (request('projects_participation') !== null)
+            $user->projects_participation = request('projects_participation');
+
+        if ($user->information !== null || $user->education !== null && $user->skills !== null && $user->projects_participation !== null)
+            $user->verification_status = 'pending';
         $user->save();
         return redirect()->route('home');
     }

@@ -5,7 +5,7 @@
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img
-                        src="{{ asset($student->avatar) }}"
+                        src="{{ asset($student->photo) }}"
                         class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$student->name}}</h5>

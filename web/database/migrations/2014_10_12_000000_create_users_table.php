@@ -24,6 +24,9 @@ return new class extends Migration {
             $table->string('student_employment_status')->nullable();
             $table->string('photo')->nullable();
             $table->text('information')->nullable();
+            $table->text('education')->nullable();
+            $table->text('skills')->nullable();
+            $table->text('projects_participation')->nullable();
             $table->bigInteger('telegram_id')->nullable();
             $table->string('telegram_auth_code')->unique();
             $table->double('student_rating')->default(0);

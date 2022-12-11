@@ -32,6 +32,9 @@ class User extends \TCG\Voyager\Models\User
         'information',
         'telegram_id',
         'telegram_auth_code',
+        'education',
+        'skills',
+        'projects_participation',
     ];
 
     /**
